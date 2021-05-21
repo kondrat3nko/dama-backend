@@ -1,0 +1,5 @@
+spring:
+  data:
+    mongodb:
+      database: dama
+      port: 27017
