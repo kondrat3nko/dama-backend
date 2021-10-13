@@ -1,7 +1,7 @@
 package com.dama.ohrringe.web.rest;
 
 import com.dama.ohrringe.domain.EarringDetail;
-import com.dama.ohrringe.dto.EarringDetailApi;
+import com.dama.ohrringe.EarringDetailApi;
 import com.dama.ohrringe.dto.EarringDetailRestDto;
 import com.dama.ohrringe.service.EarringDetailService;
 import com.dama.ohrringe.service.mapper.EarringDetailMapper;

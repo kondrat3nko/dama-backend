@@ -3,3 +3,7 @@ spring:
     mongodb:
       database: dama
       port: 27017
+
+mongock:
+  change-logs-scan-package:
+    - com.dama.ohrringe.config.db.migrations

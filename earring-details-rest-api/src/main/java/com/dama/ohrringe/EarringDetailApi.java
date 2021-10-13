@@ -1,5 +1,6 @@
-package com.dama.ohrringe.dto;
+package com.dama.ohrringe;
 
+import com.dama.ohrringe.dto.EarringDetailRestDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;

@@ -6,7 +6,6 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum ApplicationErrorStatus {
-
     GENERIC_ERROR("Unexpected exception"),
     JAR_NOT_FOUND("LF-2", "Artifact %s cannot be found within supported JarLoaders"),
     NO_SUCH_BUNDLE("LF-3", "Bundle with id = %s cannot be found. Please, make sure you are trying to access existing Bundle"),
