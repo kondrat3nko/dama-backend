@@ -2,6 +2,7 @@ package com.dama.ohrringe.domain;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.Id;
@@ -12,6 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @Data
 @SuperBuilder
 @Document("earring_details")
+@NoArgsConstructor
 public class EarringDetail extends AbstractAuditingEntity {
 
   @Id

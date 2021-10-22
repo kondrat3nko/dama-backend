@@ -29,16 +29,20 @@ public class EarringDetailService {
         return earringDetailRepository.findAll();
     }
 
-    public Optional<EarringDetail> findEarringDetailsById(String id){
-        return earringDetailRepository.findById(id);
-    }
-
     public void deleteById(String id){
         if (!earringDetailRepository.existsById(id)){
             log.error("Earring details with id {} not found", id);
             throw new ApplicationException(ENTITY_NOT_FOUND, "earring details", id);
         }
         earringDetailRepository.deleteById(id);
+    }
+
+    public Optional<EarringDetail> findEarringDetailById(String id){
+        if (!earringDetailRepository.existsById(id)){
+            log.error("Earring details with id {} not found", id);
+            throw new ApplicationException(ENTITY_NOT_FOUND, "earring details", id);
+        }
+       return earringDetailRepository.findById(id);
     }
 
 

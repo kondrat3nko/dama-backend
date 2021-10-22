@@ -2,6 +2,7 @@ package com.dama.ohrringe.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -18,6 +19,7 @@ import java.time.Instant;
  */
 @Data
 @SuperBuilder
+@NoArgsConstructor
 public abstract class AbstractAuditingEntity implements Serializable {
 
   @CreatedBy

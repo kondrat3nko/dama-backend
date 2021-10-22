@@ -56,4 +56,13 @@ public class EarringDetailController implements EarringDetailApi {
         return ResponseEntity.ok().build();
     }
 
+    @Override
+    public ResponseEntity<EarringDetailRestDto> getEarringDetail(String id) {
+        log.info("Received request to get earring detail by id {}", id);
+        EarringDetail earringDetail = earringDetailService.findEarringDetailById(id).get();
+        EarringDetailRestDto earringDetailRestDto = mapper.domainToRestDto(earringDetail);
+        log.info("Received request to get earring detail by id {} is processed successfully", id);
+        return ResponseEntity.ok(earringDetailRestDto);
+    }
+
 }

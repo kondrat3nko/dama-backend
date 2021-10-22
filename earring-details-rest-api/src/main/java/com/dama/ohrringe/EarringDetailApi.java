@@ -20,6 +20,7 @@ public interface EarringDetailApi {
             description = "Get all details for earrings"
     )
     @GetMapping
+    @CrossOrigin
     ResponseEntity<List<EarringDetailRestDto>> getAllEarringDetails();
 
     @Operation(
@@ -27,6 +28,7 @@ public interface EarringDetailApi {
             description = "Add/update detail for earrings. For update parameter \"id\" is required"
     )
     @PostMapping(produces = APPLICATION_JSON_VALUE)
+    @CrossOrigin
     ResponseEntity<EarringDetailRestDto> postEarringDetail(@RequestBody @Parameter(description = "new detail") EarringDetailRestDto earringDetailRestDto);
 
     @Operation(
@@ -34,8 +36,16 @@ public interface EarringDetailApi {
             description = "Delete earring detail by id"
     )
     @DeleteMapping("/earring/{id}")
+    @CrossOrigin
     ResponseEntity<Void> deleteById(@Parameter(description = "id detail", example = "60a819945ad3b32b9cf31c64") @PathVariable("id") String id);
 
+    @Operation(
+        summary = "Get detail by id",
+        description = "Get detail for earrings by id"
+    )
+    @GetMapping("/earring/{id}")
+    @CrossOrigin
+    ResponseEntity<EarringDetailRestDto> getEarringDetail(@Parameter(description = "id detail", example = "60a819945ad3b32b9cf31c64") @PathVariable("id") String id);
 
 
 }
