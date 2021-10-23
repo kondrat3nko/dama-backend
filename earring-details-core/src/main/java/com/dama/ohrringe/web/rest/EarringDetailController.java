@@ -32,11 +32,22 @@ public class EarringDetailController implements EarringDetailApi {
 
     @Override
     public ResponseEntity<EarringDetailRestDto> postEarringDetail(EarringDetailRestDto earringDetailRestDto) {
-        log.info("Received request to add/update earring detail {}", earringDetailRestDto);
+        log.info("Received request to add earring detail {}", earringDetailRestDto);
         EarringDetail earringDetail = earringDetailService.createEarringDetail(mapper.restDtoToDomain(earringDetailRestDto));
         EarringDetail newEarringDetail = earringDetailService.createEarringDetail(earringDetail);
         EarringDetailRestDto restDto = mapper.domainToRestDto(newEarringDetail);
-        log.info("Received request to add/update earring detail {} is processed successfully", restDto);
+        log.info("Received request to add earring detail {} is processed successfully", restDto);
+        return ResponseEntity.ok(restDto);
+    }
+
+    @Override
+    public ResponseEntity<EarringDetailRestDto> putEarringDetail(
+        EarringDetailRestDto earringDetailRestDto) {
+        log.info("Received request to update earring detail {}", earringDetailRestDto);
+        EarringDetail earringDetail = earringDetailService.createEarringDetail(mapper.restDtoToDomain(earringDetailRestDto));
+        EarringDetail newEarringDetail = earringDetailService.createEarringDetail(earringDetail);
+        EarringDetailRestDto restDto = mapper.domainToRestDto(newEarringDetail);
+        log.info("Received request to update earring detail {} is processed successfully", restDto);
         return ResponseEntity.ok(restDto);
     }
 

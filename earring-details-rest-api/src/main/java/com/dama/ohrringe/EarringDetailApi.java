@@ -24,12 +24,20 @@ public interface EarringDetailApi {
     ResponseEntity<List<EarringDetailRestDto>> getAllEarringDetails();
 
     @Operation(
-            summary = "Add/update detail",
-            description = "Add/update detail for earrings. For update parameter \"id\" is required"
+            summary = "Add detail",
+            description = "Add detail for earrings."
     )
     @PostMapping(produces = APPLICATION_JSON_VALUE)
     @CrossOrigin
     ResponseEntity<EarringDetailRestDto> postEarringDetail(@RequestBody @Parameter(description = "new detail") EarringDetailRestDto earringDetailRestDto);
+
+    @Operation(
+            summary = "Update detail",
+            description = "Update detail for earrings. For update parameter \"id\" is required"
+    )
+    @PutMapping(produces = APPLICATION_JSON_VALUE)
+    @CrossOrigin
+    ResponseEntity<EarringDetailRestDto> putEarringDetail(@RequestBody @Parameter(description = "new detail") EarringDetailRestDto earringDetailRestDto);
 
     @Operation(
             summary = "Delete by id",
