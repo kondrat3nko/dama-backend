@@ -11,6 +11,7 @@ spring:
 mongock:
   change-logs-scan-package:
     - com.dama.ohrringe.config.db.migrations
-
-
+server:
+  servlet:
+    context-path: /earringApi
 

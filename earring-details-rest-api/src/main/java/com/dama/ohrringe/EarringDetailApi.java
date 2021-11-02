@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
-@RequestMapping("/api")
+@RequestMapping("/earringParts")
 @Tag(name = "Earring Details", description = "Working with details for earrings")
 public interface EarringDetailApi {
 
@@ -19,9 +19,17 @@ public interface EarringDetailApi {
             summary = "Get all details",
             description = "Get all details for earrings"
     )
-    @GetMapping
+    @GetMapping()
     @CrossOrigin
     ResponseEntity<List<EarringDetailRestDto>> getAllEarringDetails();
+
+    @Operation(
+        summary = "Get detail by id",
+        description = "Get detail for earrings by id"
+    )
+    @GetMapping("/{id}")
+    @CrossOrigin
+    ResponseEntity<EarringDetailRestDto> getEarringDetail(@Parameter(description = "id detail", example = "60a819945ad3b32b9cf31c64") @PathVariable("id") String id);
 
     @Operation(
             summary = "Add detail",
@@ -43,17 +51,10 @@ public interface EarringDetailApi {
             summary = "Delete by id",
             description = "Delete earring detail by id"
     )
-    @DeleteMapping("/earring/{id}")
+    @DeleteMapping("/{id}")
     @CrossOrigin
     ResponseEntity<Void> deleteById(@Parameter(description = "id detail", example = "60a819945ad3b32b9cf31c64") @PathVariable("id") String id);
 
-    @Operation(
-        summary = "Get detail by id",
-        description = "Get detail for earrings by id"
-    )
-    @GetMapping("/earring/{id}")
-    @CrossOrigin
-    ResponseEntity<EarringDetailRestDto> getEarringDetail(@Parameter(description = "id detail", example = "60a819945ad3b32b9cf31c64") @PathVariable("id") String id);
 
 
 }

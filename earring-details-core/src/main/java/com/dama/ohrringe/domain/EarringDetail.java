@@ -1,6 +1,5 @@
 package com.dama.ohrringe.domain;
 
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -10,6 +9,9 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+/**
+ * An earring detail
+ */
 @Data
 @SuperBuilder
 @Document("earring_details")
