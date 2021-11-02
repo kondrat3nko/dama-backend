@@ -1,6 +1,7 @@
 package com.dama.ohrringe.config.db.migrations;
 
 import com.dama.ohrringe.domain.Authority;
+import com.dama.ohrringe.domain.PriceConfig;
 import com.dama.ohrringe.domain.User;
 import com.dama.ohrringe.security.UserRole;
 import com.github.cloudyrock.mongock.ChangeLog;
@@ -71,6 +72,12 @@ public class InitialSetupMigration {
 
     mongockTemplate.save(user);
 
+  }
+
+  @ChangeSet(order = "003", author = "initiator", id = "03-addPriceConfig")
+  public void addPriceConfig(MongockTemplate mongockTemplate){
+    PriceConfig priceConfig = PriceConfig.builder().premiumRate(5).build();
+    mongockTemplate.save(priceConfig);
   }
 
 }
