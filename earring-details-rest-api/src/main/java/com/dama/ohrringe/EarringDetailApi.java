@@ -22,7 +22,6 @@ public interface EarringDetailApi {
     @GetMapping()
     @CrossOrigin
     ResponseEntity<List<EarringDetailRestDto>> getAllEarringDetails();
-
     @Operation(
         summary = "Get detail by id",
         description = "Get detail for earrings by id"

@@ -41,8 +41,7 @@ public class EarringDetailController implements EarringDetailApi {
     }
 
     @Override
-    public ResponseEntity<EarringDetailRestDto> putEarringDetail(
-        EarringDetailRestDto earringDetailRestDto) {
+    public ResponseEntity<EarringDetailRestDto> putEarringDetail(EarringDetailRestDto earringDetailRestDto) {
         log.info("Received request to update earring detail {}", earringDetailRestDto);
         EarringDetail earringDetail = earringDetailService.createEarringDetail(mapper.restDtoToDomain(earringDetailRestDto));
         EarringDetail newEarringDetail = earringDetailService.createEarringDetail(earringDetail);

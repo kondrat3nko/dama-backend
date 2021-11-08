@@ -23,5 +23,9 @@ public class PriceConfigService {
     return priceConfigRepository.findAll().get(0);
   }
 
+  public double getPremiumRate(){
+   return findPriceConfig().getPremiumRate();
+  }
+
 
 }

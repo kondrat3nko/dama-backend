@@ -1,11 +1,11 @@
 package com.dama.ohrringe.domain;
 
 import java.util.List;
+import javax.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -23,6 +23,7 @@ public class Earring extends AbstractAuditingEntity{
   @Field("image_url")
   private String imageUrl;
   @DBRef
+  @NotNull
   private List<EarringDetail> earringDetails;
 
 }
