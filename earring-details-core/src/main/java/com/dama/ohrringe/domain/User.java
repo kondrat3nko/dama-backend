@@ -3,6 +3,7 @@ package com.dama.ohrringe.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -22,6 +23,7 @@ import java.util.Set;
  */
 @Data
 @SuperBuilder
+@NoArgsConstructor
 @Document(collection = "user")
 public class User extends AbstractAuditingEntity implements Serializable {
 

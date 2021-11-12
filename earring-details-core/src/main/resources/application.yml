@@ -1,13 +1,16 @@
+jwtSecret: javaDama2021secretEarringApplicationMilkaBelarussecretDeutschDublikateaDama2021secretEarringAppl
+
 logging:
   level:
-    root: info
+    root: debug
 
 spring:
   data:
     mongodb:
       database: dama
       port: 27017
-      host: mongo
+      host: localhost
+#      host: mongo
 
 
 mongock:
@@ -16,6 +19,6 @@ mongock:
 server:
   servlet:
     context-path: /earringApi
-  port: ${PORT}
+  port: 8084
 
 
