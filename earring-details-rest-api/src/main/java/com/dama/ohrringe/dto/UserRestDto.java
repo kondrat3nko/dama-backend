@@ -5,9 +5,12 @@ import java.time.Instant;
 import java.util.Set;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
-@Builder
+@SuperBuilder
+@NoArgsConstructor
 @Schema(description = "Entity for user")
 public class UserRestDto {
   private String id;
