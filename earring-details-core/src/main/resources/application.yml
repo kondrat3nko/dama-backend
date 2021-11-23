@@ -9,8 +9,8 @@ spring:
     mongodb:
       database: dama
       port: 27017
-      host: localhost
-#      host: mongo
+#      host: localhost
+      host: mongo
 
 
 mongock:
@@ -19,6 +19,6 @@ mongock:
 server:
   servlet:
     context-path: /earringApi
-  port: 8084
+  port: 8080
 
 
