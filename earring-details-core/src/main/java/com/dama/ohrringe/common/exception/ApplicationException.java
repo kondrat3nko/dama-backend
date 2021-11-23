@@ -1,5 +1,8 @@
 package com.dama.ohrringe.common.exception;
 
+import lombok.Getter;
+
+@Getter
 public class ApplicationException extends RuntimeException {
 
   private final ApplicationErrorStatus applicationErrorStatus;
@@ -26,7 +29,4 @@ public class ApplicationException extends RuntimeException {
     this.applicationErrorStatus = applicationErrorStatus;
   }
 
-  public ApplicationErrorStatus getApplicationErrorStatus() {
-    return applicationErrorStatus;
-  }
 }
