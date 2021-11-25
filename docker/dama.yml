@@ -8,38 +8,19 @@ services:
     restart: always
     ports:
       - 27017:27017
-    networks:
-      - backend
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin1234
+      DB_USERNAME: dama
+      DB_PASSWORD: dama2021
+      DB_NAME: dama_db
+    volumes:
+      - ./mongo_scripts/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
 
   mongo-express:
     image: mongo-express
-    restart: always
     ports:
       - 8081:8081
-    networks:
-      - backend
-
-  dama-api:
-    image: myfirstdocker01/dama-api
-    restart: always
-    ports:
-      - 8080:8080
-    depends_on:
-      - mongo
-    networks:
-      - backend
-      - frontend
-
-  dama-ui:
-    image: myfirstdocker01/dama-ui
-    ports:
-      - 8082:80
-    restart: always
-    depends_on:
-      - dama-api
-    networks:
-      - frontend
-
-networks:
-  backend:
-  frontend:
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: admin1234

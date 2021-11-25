@@ -7,10 +7,12 @@ logging:
 spring:
   data:
     mongodb:
-      database: dama
+      database: dama_db
       port: 27017
 #      host: localhost
       host: mongo
+      username: dama
+      password: dama2021
 
 
 mongock:

@@ -72,6 +72,22 @@ public class InitialSetupMigration {
 
     mongockTemplate.save(user);
 
+    User dama = User.builder()
+                     .id("user-3")
+                     .login("dama")
+                     .password("$2a$10$o77E13o.nS0qULUN8DFqVODhCMBrxhZMGD5rhDp5Fb7rkj5wBQpei")
+                     .firstName("admin")
+                     .lastName("Administrator")
+                     .email("dama@gmail.com")
+                     .activated(true)
+                     .langKey("en")
+                     .authorities(Set.of(adminAuthority, userAuthority))
+                     .createdBy("system")
+                     .createdDate(Instant.now())
+                     .build();
+
+    mongockTemplate.save(dama);
+
   }
 
   @ChangeSet(order = "003", author = "initiator", id = "03-addPriceConfig")
