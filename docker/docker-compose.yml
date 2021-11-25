@@ -5,6 +5,7 @@ services:
 
   mongo:
     image: mongo
+    container_name: mongo
     restart: always
     ports:
       - 27017:27017
@@ -23,6 +24,7 @@ services:
 
   dama-api:
     image: myfirstdocker01/dama-api
+#    image: dama-api:beta1
     restart: always
     ports:
       - 8080:8080
