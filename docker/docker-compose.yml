@@ -29,6 +29,7 @@ services:
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: admin
       ME_CONFIG_MONGODB_ADMINPASSWORD: admin1234
+      ME_CONFIG_MONGODB_SERVER: mongo
     networks:
       - backend
 
